@@ -1,0 +1,1 @@
+$HADOOP_HOME/bin/hadoop jar /tmp/sample-app.jar org.apache.hadoop.examples.WordCount $INPUT $OUTPUT

@@ -1,12 +1,11 @@
 FROM bde2020/hadoop-base:2.0.0-hadoop3.2.1-java8
 
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+COPY sample-app.jar /opt/hadoop/applications/sample-app.jar
 
-COPY WordCount.jar /opt/hadoop/applications/WordCount.jar
-
-ENV JAR_FILEPATH="/opt/hadoop/applications/WordCount.jar"
-ENV CLASS_TO_RUN="WordCount"
-ENV PARAMS="/input /output"
+ENV JAR_FILEPATH="/opt/hadoop/applications/sample-app.jar"
+ENV CLASS_TO_RUN="org.apache.hadoop.examples.WordCount"
+ENV INPUT="/user/root/input"
+ENV OUTPUT=" /user/root/output12345"
 
 ADD run.sh /run.sh
 RUN chmod a+x /run.sh
